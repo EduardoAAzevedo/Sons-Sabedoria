@@ -1,0 +1,163 @@
+.background-login{
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    position: absolute;
+}
+
+.lines-login{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+}
+  
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+#div_erros_login {
+    display: none
+}
+
+
+// COMEÇANDO A ESTILIZAR O MEU LOGIN E CADASTRO
+
+// COMEÇANDO A FAZER A CLASSE PAI DO LOGIN E CADASTRO
+.father-login{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-child{
+    width: 49%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: $gap-2;
+}
+
+.side-child-text{
+    width: 100%;
+    min-height: 40vh;
+
+    padding: $gap-2;
+}
+
+.side-child-btn-cadastro{
+    width: 80%;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-child-card{
+    max-width: 35vw;
+    width: 100%;
+    min-height: 55vh;
+    padding: $gap-2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+
+    border: 3px solid $cyan-light;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+}
+
+.side-child-card-login{
+    max-width: 35vw;
+    width: 100%;
+    min-height: 35vh;
+    padding: $gap-2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+
+    border: 3px solid $cyan-light;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+}
+
+// ESTILIZANDO INPUT DE LOGIN E CADASTRO
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 70%;
+}
+
+.form__group, label{
+    font-family: "Roboto Mono", monospace;
+}
+
+.form__field {
+    font-family: "Roboto Mono", monospace;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $cyan-normal, $cyan-light, $white-swamp);
+    border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: $cyan-light;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}

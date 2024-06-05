@@ -1,0 +1,70 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import "partials/colors.scss";
+@import "partials/layout.scss";
+@import "partials/menu.scss";
+@import "partials/typografy.scss";
+@import "partials/spacing.scss";
+@import "partials/btn.scss";
+
+html {
+  // Scrool mais suave de transição
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  background-color: $black-bg;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: end;
+}
+
+// Para deixar imagens e SVGs fluidos
+svg {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+span{
+  text-transform: uppercase;
+  color: $cyan-light;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.father-controler{
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+@import "partials/telas/welcome";
+@import "partials/telas/oquerap";
+@import "partials/telas/projeto";
+@import "partials/telas/projeto-quiz";
+@import "partials/telas/sobremim";
+@import "partials/telas/quiz";
+@import "partials/telas/loginCadastro";
+@import "partials/telas/music";
+@import "partials/footer";

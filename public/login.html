@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+
+    <div class="background-login">
+        <img class="lines-login" src="./assets/svg/lines-login.svg" alt="">
+    </div>
+
+    <!--Header-->
+
+    <!-- <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card card-login">
+                <h2>Olá de volta!</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <span>E-mail:</span>
+                        <input id="email_input" type="text" placeholder="Login">
+                    </div>
+                    <div class="campo">
+                        <span>Senha:</span>
+                        <input id="senha_input" type="password" placeholder="******">
+                    </div>
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--footer inicio-->
+    <!--footer fim-->
+
+    <div class="father-login">
+
+        <div class="side-child">
+            <div class="side-child-text">
+                <h2 class="mb-3">Seja Bem-Vindo(a)</h2>
+                <p class="mb-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum perferendis velit porro facere sint dolorum laboriosam, 
+                    voluptates distinctio unde quam neque asperiores, veritatis consequuntur magnam accusamus. Deserunt vel laboriosam corrupti.
+                </p>
+
+                <h5 class="mb-2">Não foi Cadastrado ainda? Faça seu Cadastro</h5>
+
+                <div class="side-child-btn-cadastro mt-3">
+                    <button class="btn-green" onclick="window.location.href='index.html'"> Fechar </button>
+                    <button class="btn-green" onclick="window.location.href='cadastro.html'"> Cadastre-se </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-child">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+        
+            <div class="side-child-card-login">
+        
+                <h3>Login</h3>
+        
+                <div class="form__group field">
+                    <input type="text" class="form__field" id="email_input" placeholder="Email" required="" autocomplete="off">
+                    <label for="email" class="form__label">Email:</label>
+                </div>
+        
+                <div class="form__group field">
+                  <input type="password" class="form__field" id="senha_input" placeholder="Password" required="" autocomplete="off">
+                  <label for="password" class="form__label">Senha:</label>
+                </div>
+        
+                <button class="btn-green" onclick="entrar()"> Cadastrar </button>
+        
+                <div id="div_aguardar" class="loading-div">
+                  <img src="./assets/circle-loading.gif" id="loading-gif" />
+                </div>
+        
+        
+                <div id="div_erros_login"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.ID_USUARIO = json[0].id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

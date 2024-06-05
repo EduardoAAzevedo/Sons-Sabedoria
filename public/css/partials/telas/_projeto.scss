@@ -1,0 +1,66 @@
+// CONTROLANDO O TAMANHO DO SVG 
+.controler-svg{
+    height: 99%;
+}
+
+// ESTILIZANDO AS DIVS DE TEXTO E DA SVG
+.child-project{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.child-text-project{
+    width: 60%;
+    height: 100%;
+    padding-top: $gap-5;
+    padding-left: 10%;
+}
+
+.child-svg-project{
+    width: 38%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.text-project-topic{
+    width: 95%;
+    height: 40%;
+
+    padding-top: $gap-2;
+    margin-top: $gap-3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.topic-text{
+    display: flex;
+    align-items: center;
+}
+
+.topic-text:nth-child(1){
+    padding-right: 18%;
+}
+
+.topic-text:nth-child(2){
+    padding-right: 12%;
+}
+
+.topic-text:nth-child(3){
+    padding-right: 6%;
+}
+
+.topic-text img{
+    width: 50px;
+}
+
+.svg-project{
+    width: 80%;
+}

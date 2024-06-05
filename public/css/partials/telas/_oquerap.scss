@@ -1,0 +1,53 @@
+// POSICIONANDO O CIRCULO DE RAPPERS
+.bg-svg-oque{
+    position: absolute;
+    top: 85vh;
+    right: -18%;
+    z-index: -1;
+}
+
+.controler-svg-oque{
+    width: 90%;
+}
+
+// POSICIONANDO O CIRCULO DE BLUR
+.circle-blur{
+    width: 150px;
+    height: 150px;
+    background-color: $cyan-light;
+    filter: blur(120px);
+
+    position: absolute;
+    top: 120vh;
+}
+
+.circle-blur2{
+    width: 150px;
+    height: 150px;
+    background-color: $green-swamp;
+    filter: blur(90px);
+
+    position: absolute;
+    top: 150vh;
+    left: 65%;
+    z-index: -2;
+}
+
+// ESTILIZANDO OQUE É RAP
+.child-oque{
+    width: 100%;
+    height: 100%;
+}
+
+.child-oque-text{
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-organizador{
+    width: 90%;
+}

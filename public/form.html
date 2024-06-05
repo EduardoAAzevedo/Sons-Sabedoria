@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formulario - teste </title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/quiz-back.js"></script>
+</head>
+<body>
+
+    <div class="fundo">
+        <img class="trian-1" src="./assets/svg/trian-quiz.svg" alt="">
+        <img class="trian-2" src="./assets/svg/trian-quiz-2.svg" alt="">
+        <img class="trian-3" src="./assets/svg/trian-quiz-3.svg" alt="">
+    </div>
+
+    <div class="father-quiz" id="card_welcome">
+
+        <div class="welcome-quiz">
+
+            <div class="card-welcome-quiz">
+                <h1>Quiz</h1>
+                <h5>Sons da Sabedoria</h5>
+
+                <div class="card-welcome-text mt-3">
+                
+                    <p class="mb-2">
+                        Olá! Seja bem-vindo ao nosso quiz especial que explora a sabedoria e a filosofia presente nas letras do Rap e Hip-Hop. As músicas desse gênero musical não são apenas entretenimento; elas são uma rica fonte de reflexão, ensinamentos e inspiração.
+                    </p>
+
+                    <p class="mb-2 mt-2">
+                        Neste quiz, você encontrará perguntas baseadas em frases icônicas de artistas renomados como Racionais MC's, Edi Rock, Sabotage, Gabriel o Pensador, entre outros. As perguntas foram elaboradas para incentivar você a pensar sobre os valores, desafios e lições que essas letras nos ensinam.
+                    </p>
+
+                    <p class="mb-2 mt-2">
+                        <b>Instruções:</b><br>
+                        Você terá uma frase de uma música e quatro alternativas para escolher.<br>
+                        Leia cada frase com atenção e reflita sobre seu significado antes de selecionar a resposta.<br>
+                        Não há limite de tempo, então aproveite para mergulhar fundo no mundo do Rap e Hip-Hop.<br>
+                        Esperamos que você se divirta e aprenda com este quiz, tanto quanto nós ao prepará-lo.<br>
+                        Quando estiver pronto, clique no botão abaixo para começar.<br>
+                    </p>
+
+                    <p class="mt-2">
+                        Boa sorte e aproveite o quiz!
+                    </p>
+                </div>
+
+                <button class="btn-green mt-3" onclick="start()">Iniciar</button>
+            </div> 
+
+        </div>
+
+    </div>
+
+    <div class="father-quiz" id="start_father_quiz" style="display: none;">    
+
+        <h1 class="titulo-form-quiz">QUIZ</h1>
+        <h5 class="subtitulo-form-quiz">Sons da Sabedoria</h5>
+
+        <div class="campo-form-quiz">
+
+            <!-- // -- // PLACAR DOS POINTS FINAIS // -- // -->
+
+            <div class="placar-end" id="final" style="display: none;">
+
+                <h3>Pontos Finais</h3>
+
+                <p>Esssa Foi sua Pontuação Final:</p>
+                    
+                <div class="points">
+                    <p id="points_msg">Pontos: 99999</p>
+                </div>
+
+                <div class="button-placar">
+                    <button class="btn-green" onclick="window.location.href='./dashboard/dashboard.html'">Fechar Quiz</button>
+
+                    <button class="btn-green" onclick="salvar()">Salvar Resultado</button>
+                    
+                </div>
+
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 1 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_1" style="display: flex;">
+                <h3 class="mb-2">Pergunta Nº 1</h3>
+                <p class="mb-2">
+                    <b>Frase:</b>
+                    "Não espere o futuro mudar tua vida, porque o futuro será a consequência do presente." – Racionais MC's, Música: A vida é um desafio
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> Qual é a mensagem principal desta frase dos Racionais MC's?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>A. O futuro está predestinado e não pode ser mudado.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_1">
+                        <p>B. As ações presentes determinam o futuro.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. O futuro é mais importante que o presente.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. Não há necessidade de se preocupar com o futuro.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_1()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 2 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_2" style="display: none;">
+                <h3 class="mb-2">Pergunta Nº 2</h3>
+                <p class="mb-2">
+                    <b>Frase:</b> "Onde estiver, seja lá como for, tenha fé porque até no lixão nasce flor." – Racionais MC's, Música: Vida Loka (parte 1)
+                </p>
+                <p class="mb-2">
+                    <b> Pergunta: </b> O que a frase sugere sobre a fé?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>A. A fé é irrelevante em circunstâncias difíceis.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. A fé só é necessária em momentos de prosperidade.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_2">
+                        <p>C. A fé pode florescer mesmo em situações adversas.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. A fé depende das circunstâncias.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_2()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 3 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_3" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 3</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "A confiança é uma mulher ingrata, que te beija e te abraça, te rouba e te mata." – Racionais MC's, Música: Vida Loka (parte 1)
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> Como a confiança é descrita nesta frase?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. Algo que é sempre confiável.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_3">
+                        <p>B. Algo que pode ser traiçoeiro.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. Algo que é fácil de obter.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. Algo que nunca muda.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_3()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 4 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_4" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 4</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "É melhor uma cara quebrada, do que máscaras intactas… Só no deserto compreendeu o valor que tem a água; matando a sede com a lágrima que molha à medalha, 
+                    e a fé diz para a vitória não colar de mão beijada." – Mano Fler, Música: R.U.A Edição Especial
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> Qual é a mensagem principal da frase?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. Manter as aparências é mais importante que enfrentar dificuldades.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_4">
+                        <p>B. Enfrentar a verdade e as dificuldades é mais valioso que esconder-se atrás de mentiras.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. A vitória deve ser sempre fácil e sem esforço.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. A fé não é importante na busca pela vitória.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_4()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 5 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_5" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 5</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Quem deixou a janela aberta não pode culpar o vento, pois a desordem é o fruto do próprio relaxamento." – Mano Fler, Música: Médico da Alma
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> O que a frase sugere sobre responsabilidade?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. As coisas fora de controle não são nossa culpa.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. Devemos culpar fatores externos pelos nossos problemas.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_5">
+                        <p>C. A desordem é resultado da falta de cuidado e responsabilidade própria.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. A desordem é inevitável, independentemente das ações.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_5()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 6 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_6" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 6</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Deus chama de processo, o que cê chama de demora. Humildade não é viver sua vida inteira na pobreza. É saber sair e chegar, independente de quem seja."
+                    – Mano Fler, Música: R.U.A Edição Especial
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> Como a humildade é descrita nesta frase?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. Viver sempre na pobreza.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. Nunca tentar melhorar a própria vida.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_6">
+                        <p>C. Saber como se comportar e tratar os outros, independentemente da situação.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. Nunca se mover de sua posição inicial.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_6()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 7 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_7" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 7</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Sobreviver aqui é difícil luta sacrifício. De um lado ta o crime de outro ta o vício." – Tropa de Elite
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> O que a frase destaca sobre a sobrevivência em certos ambientes?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. A sobrevivência é fácil e sem desafios.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_7">
+                        <p>B. A luta e o sacrifício são constantes, com o crime e o vício como grandes ameaças.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. O crime e o vício não afetam a sobrevivência.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. Não há necessidade de luta ou sacrifício.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_7()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 8 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_8" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 8</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Quem não fez… faz… usa a mente e corre atrás." – Sabotage
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> Qual é a mensagem principal desta frase?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. É melhor não tentar novas coisas.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. O sucesso vem sem esforço ou planejamento.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. Devemos esperar que as oportunidades venham até nós.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_8">
+                        <p>D. Usar a mente e perseguir objetivos é essencial para o sucesso.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_8()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 9 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_9" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 9</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Onde esteja estiver esta escrito, seja sangue bom, pois isso é preciso…" – RZO
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> O que a frase sugere sobre comportamento e atitude?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_9">
+                        <p>A. É importante ser uma boa pessoa, independentemente das circunstâncias.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. Devemos ser sempre egoístas.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. Devemos nos adaptar ao comportamento dos outros.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>D. Atitudes não importam, apenas resultados.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_9()">Enviar</button>
+            </div>
+
+            <!-- // -- // PERGUNTA NUMERO 10 // -- // -->
+
+            <div class="quiz-formulario" id="pergunta_10" style="display: none;">
+                <h3 class='mb-2'>Pergunta Nº 10</h3>
+                <p class='mb-2'>
+                    <b>Frase:</b> "Eu não estou dizendo que eu mude e nem que eu vou mudar o mundo… Estou dizendo apenas que o mundo deve ser mudado." – 2Pac
+                </p>
+                <p class="mb-2">
+                    <b>Pergunta:</b> O que a frase sugere sobre mudança no mundo?
+                </p>
+                <div class="alternativa">
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" >
+                        <p>A. Não há necessidade de mudança no mundo.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>B. A mudança do mundo é impossível.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1">
+                        <p>C. Somente grandes líderes podem mudar o mundo.</p>
+                    </label>
+                    <label class="btn-alter">
+                        <input type="radio" name="q_1" id="p_10">
+                        <p>D. O mundo deve ser mudado, independentemente de quem o faça.</p>
+                    </label>
+                </div>
+                <br>
+                <button class="btn-green" onclick="per_10()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

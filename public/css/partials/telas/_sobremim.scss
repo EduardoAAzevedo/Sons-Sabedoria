@@ -1,0 +1,162 @@
+.background-sobre-mim{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.side-card-my{
+    position: absolute;
+    width: 500px;
+    height: 700px;
+
+    top: 13%;
+    left: 7%;
+}
+
+.my-card{
+    width: 330px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.my-circle{
+    width: 180px;
+    position: absolute;
+    top: 55%;
+    left: 60%;
+}
+
+.text-year{
+    font-size: 19px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-year-1{
+    font-size: 19px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-year-2{
+    font-size: 19px;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.my-name{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(45,96,115,1) 0%, rgba(101,184,166,1) 61%, rgba(147,189,154,1) 100%, rgba(240,247,218,1) 100%);
+
+    bottom: 9%;
+    left: 50%;
+    border-radius: 30px;
+
+    transform: translateX(-50%);
+}
+
+.my-name-text{
+    width: 360px;
+    font-size: 23px;
+    position: absolute;
+
+    letter-spacing: 2.5px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sobre-mim-trian{
+    width: 320px;
+    position: absolute;
+    top: 2%;
+    left: 0;
+}
+
+.sobre-mim-trian1{
+    width: 320px;
+    position: absolute;
+    top: 2%;
+    left: 30%;
+}
+
+.sobre-mim-trian2{
+    width: 200px;
+    position: absolute;
+    top: 78%;
+    left: 28%;
+}
+
+.sobre-mim-trian3{
+    width: 450px;
+    position: absolute;
+    top: 5%;
+    right: 0;
+}
+
+.sobre-mim-trian4{
+    width: 150px;
+    position: absolute;
+    top: 78%;
+    left: 85%;
+}
+
+// ESTILIZANDO A PARTE ONDE VAI FICAR O TEXTO DE SOBRE MIM
+.father-sobre-mim{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.side-child-my{
+    width: 60%;
+    height: calc(100% - 70px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: $gap-3;
+}
+
+.text-about-me{
+    width: 80%;
+}
+
+.card-about-me{
+    width: 100%;
+    padding: $gap-2;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-about-me{
+    width: 70px;
+}
+
+.icon-about-me:nth-child(4){
+    width: 80px;
+}
+
+.icon-about-me:nth-child(5){
+    width: 50px;
+}

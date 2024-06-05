@@ -1,0 +1,172 @@
+.fundo{
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+}
+
+.trian-1{
+    position: absolute;
+    top: -10vh;
+    left: -5vw;
+
+    width: 700px;
+}
+
+.trian-2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 500px;
+}
+
+.trian-3{
+    position: absolute;
+    top: 0;
+    right: 12vw;
+
+    width: 500px;
+}
+
+// FATHER DA TELA
+.father-quiz{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+// WELCOME TO QUIZ
+.welcome-quiz{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-welcome-quiz{
+    max-width: 60vw;
+    width: 100%;
+    min-height: 59vh;
+    padding: $gap-1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-welcome-text{
+    background: rgba(28, 28, 28, 0.267);
+    backdrop-filter: blur(5px);
+
+    padding: $gap-3;
+    border-radius: 20px;
+    border: 3px solid $cyan-light;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// TITULO DO QUIZ
+.titulo-form-quiz{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.subtitulo-form-quiz{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// CAMPO DO QUIZ
+.campo-form-quiz{
+    width: 100%;
+    height: calc(100% - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ESTILIZANDO CARD DO QUIZ
+.quiz-formulario{
+    max-width: 50vw;
+    min-width: 400px;
+    width: 100%;
+
+    padding: $gap-2;
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid $cyan-light;
+    border-radius: 13px;
+}
+
+.alternativa{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+// FATHER INPUTS TYPE RADIO
+.btn-alter{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 50px;
+    text-align: start;
+}
+
+// ESTILIZANDO O PLACAR FINAL
+.father-quiz-placar{
+    width: 100%;
+    height: 100%;
+    min-height: 19vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.placar-end{
+    max-width: 30vw;
+    min-width: 400px;
+    width: 100%;
+    min-height: 35vh;
+    border: 2px solid $cyan-light;
+    border-radius: 13px;
+    padding: $gap-2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-placar{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.points{
+    padding: $gap-2;
+    border: 2px solid $cyan-light;
+    border-radius: 10px;
+    width: 50%;
+}
